@@ -1,0 +1,55 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/opt/nvm/v0.10.33/bin/node',
+1 verbose cli   '/usr/local/opt/nvm/v0.10.33/bin/npm',
+1 verbose cli   'rebuild',
+1 verbose cli   'node-sass' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/opt/nvm/v0.10.33/bin/node
+5 info readInstalled object
+6 verbose rebuild path, id [ '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/node-sass',
+6 verbose rebuild   'node-sass@3.7.0' ]
+7 silly rebuild set [ '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/node-sass' ]
+8 info build /Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/node-sass
+9 info preinstall node-sass@3.7.0
+10 verbose linkStuff [ false,
+10 verbose linkStuff   false,
+10 verbose linkStuff   false,
+10 verbose linkStuff   '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules' ]
+11 info linkStuff node-sass@3.7.0
+12 verbose linkBins node-sass@3.7.0
+13 verbose link bins [ { 'node-sass': 'bin/node-sass' },
+13 verbose link bins   '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin',
+13 verbose link bins   false ]
+14 verbose linkMans node-sass@3.7.0
+15 verbose rebuildBundles node-sass@3.7.0
+16 verbose rebuildBundles [ '.bin',
+16 verbose rebuildBundles   'async-foreach',
+16 verbose rebuildBundles   'chalk',
+16 verbose rebuildBundles   'cross-spawn-async',
+16 verbose rebuildBundles   'gaze',
+16 verbose rebuildBundles   'get-stdin',
+16 verbose rebuildBundles   'glob',
+16 verbose rebuildBundles   'in-publish',
+16 verbose rebuildBundles   'meow',
+16 verbose rebuildBundles   'mkdirp',
+16 verbose rebuildBundles   'nan',
+16 verbose rebuildBundles   'node-gyp',
+16 verbose rebuildBundles   'request',
+16 verbose rebuildBundles   'sass-graph' ]
+17 error Error: EACCES, unlink '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin/node-sass'
+17 error  { [Error: EACCES, unlink '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin/node-sass']
+17 error   errno: 3,
+17 error   code: 'EACCES',
+17 error   path: '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin/node-sass' }
+18 error Please try running this command again as root/Administrator.
+19 error System Darwin 15.4.0
+20 error command "/usr/local/opt/nvm/v0.10.33/bin/node" "/usr/local/opt/nvm/v0.10.33/bin/npm" "rebuild" "node-sass"
+21 error cwd /Users/Joey/Documents/Joey/api-react/todo-app
+22 error node -v v0.10.33
+23 error npm -v 1.4.28
+24 error path /Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin/node-sass
+25 error code EACCES
+26 error errno 3
+27 error stack Error: EACCES, unlink '/Users/Joey/Documents/Joey/api-react/todo-app/node_modules/gulp-sass/node_modules/.bin/node-sass'
+28 verbose exit [ 3, true ]
