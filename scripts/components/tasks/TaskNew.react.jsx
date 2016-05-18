@@ -31,6 +31,12 @@ var TaskNew = React.createClass({
           <div className="new-task__body">
             <textarea rows="10" placeholder="Your task..." name="body" ref="body" /> 
           </div>
+          <div className="new-task__status">
+            <input type="checkbox" name="status" />
+          </div>
+          <div className="new-task__due_date">
+            <input type="date" name="due_date" />
+          </div>
           <div className="new-task__submit">
             <button type="submit">Create</button>
           </div>

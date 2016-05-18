@@ -14,11 +14,11 @@ body {
   background-color: #ffffff;
 }
 
-.new-story {
+.new-task {
   margin-top: 20px;
 }
 
-.new-story__title {
+.new-task__title {
   input {
    border: none;
    box-shadow: none;
@@ -26,7 +26,7 @@ body {
   }
 }
 
-.new-story__body {
+.new-task__body {
   textarea {
    background-color: #fafafa;
    border: none;
@@ -37,36 +37,40 @@ body {
 
 }
 
-.story {
+.task {
   list-style: none;
   padding: 10px;
   margin-top: 10px;
   font-family: 'Raleway', sans-serif;
 }
-
-.story__title {
+.task-right {
+  display: inline-block;
+  float: right;
+}
+.task__title {
   text-decoration: none;
   font-weight: 700;
-  font-size: rem-calc(24);
+  font-size: rem-calc(18);
+  display: inline-block;
   a {
     color: black;
   }
 }
 
-.story__body {
+.task__body {
   font-weight: 400;
   font-size: rem-calc(14);
   color: #333;
   font-style: italic;
 }
 
-.story__user {
+.task__user {
   font-weight: 400;
   font-size: rem-calc(12);
   color: #2E8BA9;
 }
 
-.story__date {
+.task__date {
   color: #aaa;
   font-size: rem-calc(12);
 }

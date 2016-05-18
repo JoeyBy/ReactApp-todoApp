@@ -9,7 +9,7 @@ var CHANGE_EVENT = 'change';
 
 var _tasks = [];
 var _errors = [];
-var _task = { title: "", body: "", user: { username: "" } };
+var _task = { title: "", body: "", user: { username: "" }, status: "", due_date: "" };
 
 var TaskStore = assign({}, EventEmitter.prototype, {
 

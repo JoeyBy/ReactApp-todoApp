@@ -29585,6 +29585,12 @@ var TaskNew = React.createClass({displayName: "TaskNew",
           React.createElement("div", {className: "new-task__body"}, 
             React.createElement("textarea", {rows: "10", placeholder: "Your task...", name: "body", ref: "body"})
           ), 
+          React.createElement("div", {className: "new-task__status"}, 
+            React.createElement("input", {type: "checkbox", name: "status"})
+          ), 
+          React.createElement("div", {className: "new-task__due_date"}, 
+            React.createElement("input", {type: "date", name: "due_date"})
+          ), 
           React.createElement("div", {className: "new-task__submit"}, 
             React.createElement("button", {type: "submit"}, "Create")
           )
@@ -29603,6 +29609,7 @@ var WebAPIUtils = require('../../utils/WebAPIUtils.js');
 var TaskStore = require('../../tasks/TaskStore.react.jsx');
 var TaskActionCreators = require('../../actions/TaskActionCreators.react.jsx');
 var State = require('react-router').State;
+var moment = require('moment');
 
 var TaskPage = React.createClass({displayName: "TaskPage",
   
@@ -29636,7 +29643,9 @@ var TaskPage = React.createClass({displayName: "TaskPage",
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: "task__title"}, this.state.task.title), 
         React.createElement("div", {className: "task__body"}, this.state.task.body), 
-        React.createElement("div", {className: "task__user"}, this.state.task.user.username)
+        React.createElement("div", {className: "task__user"}, this.state.task.user.username), 
+        React.createElement("div", {className: "task__due_date"}, " Due: ", moment(this.state.task.due_date).fromNow()), 
+        React.createElement("div", {className: "task__status"}, " Status: ", this.state.task.status)
       )
      );
   }
@@ -29645,7 +29654,7 @@ var TaskPage = React.createClass({displayName: "TaskPage",
 
 module.exports = TaskPage;
 
-},{"../../actions/TaskActionCreators.react.jsx":215,"../../tasks/TaskStore.react.jsx":230,"../../utils/WebAPIUtils.js":231,"react":205,"react-router":33}],224:[function(require,module,exports){
+},{"../../actions/TaskActionCreators.react.jsx":215,"../../tasks/TaskStore.react.jsx":230,"../../utils/WebAPIUtils.js":231,"moment":7,"react":205,"react-router":33}],224:[function(require,module,exports){
 var React = require('react');
 var WebAPIUtils = require('../../utils/WebAPIUtils.js');
 var TaskStore = require('../../tasks/TaskStore.react.jsx');
@@ -29702,11 +29711,11 @@ var TaskItem = React.createClass({displayName: "TaskItem",
             this.props.task.title
           )
         ), 
-        React.createElement("div", {className: "task__body"}, this.props.task['abstract'], "..."), 
-        React.createElement("span", {className: "task__user"}, this.props.task.user.username), 
-        React.createElement("span", {className: "task__date"}, " - ", moment(this.props.task.created_at).fromNow())
+        React.createElement("div", {className: "task-right"}, 
+          React.createElement("span", {className: "task__due_date"}, moment(this.props.task.due_date).fromNow(true))
+        )
       )
-      );
+    );
   }
 });
 
@@ -29982,7 +29991,7 @@ var CHANGE_EVENT = 'change';
 
 var _tasks = [];
 var _errors = [];
-var _task = { title: "", body: "", user: { username: "" } };
+var _task = { title: "", body: "", user: { username: "" }, status: "", due_date: "" };
 
 var TaskStore = assign({}, EventEmitter.prototype, {
 

@@ -54,11 +54,11 @@ var TaskItem = React.createClass({
             {this.props.task.title}
           </Link>
         </div>
-        <div className="task__body">{this.props.task['abstract']}...</div>
-        <span className="task__user">{this.props.task.user.username}</span>
-        <span className="task__date"> - {moment(this.props.task.created_at).fromNow()}</span>
+        <div className="task-right">
+          <span className="task__due_date">{moment(this.props.task.due_date).fromNow(true)}</span>
+        </div>
       </li>
-      );
+    );
   }
 });
 
